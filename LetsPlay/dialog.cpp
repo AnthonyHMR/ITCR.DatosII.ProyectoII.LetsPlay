@@ -1,6 +1,8 @@
 #include "dialog.h"
 #include "ui_dialog.h"
 
+#include <QJsonObject>
+
 Dialog::Dialog(QWidget *parent) :
     QDialog(parent),
     ui(new Ui::Dialog)
@@ -16,8 +18,13 @@ Dialog::~Dialog()
 
 void Dialog::on_pushButton_clicked()
 {
-    game = new Game();
-    game->show();
+    QJsonObject obj;
+
+    obj["Players"] = ui->nPlayers->text();
+    obj["GameMode"] = ui->gameMode->text();
+
+    game = new Game(obj);
+    game->show(ui->gameMode->value());
 
     this->close();
 }

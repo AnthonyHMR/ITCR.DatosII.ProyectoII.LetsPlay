@@ -35,9 +35,9 @@ public:
     QSpacerItem *horizontalSpacer;
     QLabel *label_3;
     QVBoxLayout *verticalLayout;
-    QSpinBox *spinBox;
-    QSpinBox *spinBox_2;
-    QSpinBox *spinBox_3;
+    QSpinBox *nPlayers;
+    QSpinBox *maxGoals;
+    QSpinBox *gameMode;
     QSpacerItem *verticalSpacer;
     QPushButton *pushButton;
 
@@ -83,26 +83,26 @@ public:
 
         verticalLayout = new QVBoxLayout();
         verticalLayout->setObjectName(QString::fromUtf8("verticalLayout"));
-        spinBox = new QSpinBox(Dialog);
-        spinBox->setObjectName(QString::fromUtf8("spinBox"));
-        spinBox->setMinimum(1);
-        spinBox->setMaximum(7);
+        nPlayers = new QSpinBox(Dialog);
+        nPlayers->setObjectName(QString::fromUtf8("nPlayers"));
+        nPlayers->setMinimum(1);
+        nPlayers->setMaximum(8);
 
-        verticalLayout->addWidget(spinBox);
+        verticalLayout->addWidget(nPlayers);
 
-        spinBox_2 = new QSpinBox(Dialog);
-        spinBox_2->setObjectName(QString::fromUtf8("spinBox_2"));
-        spinBox_2->setMinimum(1);
-        spinBox_2->setMaximum(9);
+        maxGoals = new QSpinBox(Dialog);
+        maxGoals->setObjectName(QString::fromUtf8("maxGoals"));
+        maxGoals->setMinimum(1);
+        maxGoals->setMaximum(9);
 
-        verticalLayout->addWidget(spinBox_2);
+        verticalLayout->addWidget(maxGoals);
 
-        spinBox_3 = new QSpinBox(Dialog);
-        spinBox_3->setObjectName(QString::fromUtf8("spinBox_3"));
-        spinBox_3->setMinimum(1);
-        spinBox_3->setMaximum(2);
+        gameMode = new QSpinBox(Dialog);
+        gameMode->setObjectName(QString::fromUtf8("gameMode"));
+        gameMode->setMinimum(1);
+        gameMode->setMaximum(2);
 
-        verticalLayout->addWidget(spinBox_3);
+        verticalLayout->addWidget(gameMode);
 
 
         horizontalLayout_2->addLayout(verticalLayout);

@@ -12,14 +12,8 @@ TcpClient::TcpClient()
     mSocket->connectToHost("localhost", 54000);
 }
 
-void TcpClient::sendMessage(QJsonObject obj)
+void TcpClient::sendMessage(QByteArray data_json)
 {
-    QByteArray data_json;
-    QJsonDocument doc;
-
-    doc.setObject(obj);
-    data_json = doc.toJson();
-
     QTextStream T(mSocket);
     T << data_json;
     mSocket->flush();

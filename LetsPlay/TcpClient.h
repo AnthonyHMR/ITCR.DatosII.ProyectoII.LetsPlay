@@ -10,7 +10,7 @@ class TcpClient : public QObject
 {
 public:
     TcpClient();
-    void sendMessage(QJsonObject);
+    void sendMessage(QByteArray);
 private:
     QTcpSocket *mSocket;
 };

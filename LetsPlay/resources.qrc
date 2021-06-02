@@ -1,0 +1,7 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>calvo.jpg</file>
+        <file>pelo.jpg</file>
+        <file>field.jpg</file>
+    </qresource>
+</RCC>

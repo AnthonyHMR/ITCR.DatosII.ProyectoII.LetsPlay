@@ -1,11 +1,15 @@
 #ifndef GAME_H
 #define GAME_H
 
-class Game
+#include <QJsonObject>
+#include <QObject>
+#include <QGraphicsPixmapItem>
+
+class Game : public QObject, public QGraphicsPixmapItem
 {
 public:
-    Game();
-    void show();
+    Game(QJsonObject);
+    void show(int);
 };
 
 #endif // GAME_H

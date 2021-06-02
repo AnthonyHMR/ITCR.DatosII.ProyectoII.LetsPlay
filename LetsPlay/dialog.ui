@@ -63,17 +63,17 @@
        <item>
         <layout class="QVBoxLayout" name="verticalLayout">
          <item>
-          <widget class="QSpinBox" name="spinBox">
+          <widget class="QSpinBox" name="nPlayers">
            <property name="minimum">
             <number>1</number>
            </property>
            <property name="maximum">
-            <number>7</number>
+            <number>8</number>
            </property>
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="spinBox_2">
+          <widget class="QSpinBox" name="maxGoals">
            <property name="minimum">
             <number>1</number>
            </property>
@@ -83,7 +83,7 @@
           </widget>
          </item>
          <item>
-          <widget class="QSpinBox" name="spinBox_3">
+          <widget class="QSpinBox" name="gameMode">
            <property name="minimum">
             <number>1</number>
            </property>
