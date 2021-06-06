@@ -86,7 +86,7 @@ public:
         nPlayers = new QSpinBox(Dialog);
         nPlayers->setObjectName(QString::fromUtf8("nPlayers"));
         nPlayers->setMinimum(1);
-        nPlayers->setMaximum(8);
+        nPlayers->setMaximum(7);
 
         verticalLayout->addWidget(nPlayers);
 

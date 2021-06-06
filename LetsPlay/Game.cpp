@@ -25,10 +25,10 @@ void Game::show(int nPlayers)
     scene->addItem(ball);
 
     QStringList posX;
-    posX << "55" << "550" << "125" << "480" << "125" << "480" << "155" << "450" << "155" << "450" << "185" << "420" << "245" << "360" << "245" << "360";
+    posX << "120" << "485" << "120" << "485" << "150" << "455" << "150" << "455" << "180" << "425" << "240" << "365" << "240" << "365";
 
     QStringList posY;
-    posY << "190" << "140" << "240" << "50" << "330" << "190" << "140" << "240";
+    posY << "140" << "240" << "50" << "330" << "190" << "130" << "250";
 
     QJsonArray arrayObj;
     QJsonObject obj;
@@ -38,14 +38,14 @@ void Game::show(int nPlayers)
         if ((i+1)%2 != 0) {
             buildPlayer(posX[i].toInt(), posY[count].toInt(), ":/images/germany.jpg");
             obj["ID"] = i+1;
-            obj["PosX"] = posX[i];
-            obj["PosY"] = posY[count];
+            obj["PosX"] = abs(posX[i].toInt()/10);
+            obj["PosY"] = posY[count].toInt()/10;
             obj["Team"] = 1;
         }else{
             buildPlayer(posX[i].toInt(), posY[count].toInt(), ":/images/brazil.jpg");
             obj["ID"] = i+1;
-            obj["PosX"] = posX[i];
-            obj["PosY"] = posY[count];
+            obj["PosX"] = abs(posX[i].toInt()/10);
+            obj["PosY"] = posY[count].toInt()/10;
             obj["Team"] = 2;
             count++;
         }
