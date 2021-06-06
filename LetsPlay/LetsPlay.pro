@@ -14,6 +14,7 @@ SOURCES += \
     Players.cpp \
     TcpClient.cpp \
     dialog.cpp \
+    jsonConverter.cpp \
     main.cpp \
     widget.cpp
 
@@ -23,6 +24,7 @@ HEADERS += \
     Players.h \
     TcpClient.h \
     dialog.h \
+    jsonConverter.h \
     widget.h
 
 FORMS += \

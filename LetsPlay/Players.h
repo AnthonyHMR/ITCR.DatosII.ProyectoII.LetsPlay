@@ -7,7 +7,7 @@
 class Players : public QGraphicsRectItem
 {
 public:
-    Players();
+    Players(int, int, QString);
 };
 
 #endif // PLAYERS_H

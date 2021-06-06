@@ -6,11 +6,8 @@
 
 class Ball : public QObject, public QGraphicsRectItem
 {
-    Q_OBJECT
 public:
     Ball();
-public slots:
-    void spawnPlayers();
 };
 
 #endif // BALL_H
