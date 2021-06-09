@@ -10,9 +10,12 @@ class TcpClient : public QObject
 {
 public:
     TcpClient();
-    void sendMessage(QByteArray);
+    void Connect();
+    void sendMessage(QString);
+    QString getMessage();
 private:
     QTcpSocket *mSocket;
+    QString text;
 };
 
 #endif // TCPCLIENT_H

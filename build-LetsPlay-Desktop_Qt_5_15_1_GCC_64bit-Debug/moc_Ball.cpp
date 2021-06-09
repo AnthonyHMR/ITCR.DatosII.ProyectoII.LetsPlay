@@ -23,7 +23,7 @@ QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_Ball_t {
     QByteArrayData data[3];
-    char stringdata0[19];
+    char stringdata0[11];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -33,11 +33,11 @@ struct qt_meta_stringdata_Ball_t {
 static const qt_meta_stringdata_Ball_t qt_meta_stringdata_Ball = {
     {
 QT_MOC_LITERAL(0, 0, 4), // "Ball"
-QT_MOC_LITERAL(1, 5, 12), // "spawnPlayers"
-QT_MOC_LITERAL(2, 18, 0) // ""
+QT_MOC_LITERAL(1, 5, 4), // "move"
+QT_MOC_LITERAL(2, 10, 0) // ""
 
     },
-    "Ball\0spawnPlayers\0"
+    "Ball\0move\0"
 };
 #undef QT_MOC_LITERAL
 
@@ -69,7 +69,7 @@ void Ball::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void *
         auto *_t = static_cast<Ball *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->spawnPlayers(); break;
+        case 0: _t->move(); break;
         default: ;
         }
     }
@@ -77,7 +77,7 @@ void Ball::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void *
 }
 
 QT_INIT_METAOBJECT const QMetaObject Ball::staticMetaObject = { {
-    QMetaObject::SuperData::link<QObject::staticMetaObject>(),
+    QMetaObject::SuperData::link<TcpClient::staticMetaObject>(),
     qt_meta_stringdata_Ball.data,
     qt_meta_data_Ball,
     qt_static_metacall,
@@ -98,12 +98,12 @@ void *Ball::qt_metacast(const char *_clname)
         return static_cast<void*>(this);
     if (!strcmp(_clname, "QGraphicsRectItem"))
         return static_cast< QGraphicsRectItem*>(this);
-    return QObject::qt_metacast(_clname);
+    return TcpClient::qt_metacast(_clname);
 }
 
 int Ball::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 {
-    _id = QObject::qt_metacall(_c, _id, _a);
+    _id = TcpClient::qt_metacall(_c, _id, _a);
     if (_id < 0)
         return _id;
     if (_c == QMetaObject::InvokeMetaMethod) {

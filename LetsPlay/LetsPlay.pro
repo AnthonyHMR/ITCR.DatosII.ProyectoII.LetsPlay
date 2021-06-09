@@ -10,6 +10,7 @@ CONFIG += c++11
 
 SOURCES += \
     Ball.cpp \
+    Button.cpp \
     Game.cpp \
     Players.cpp \
     TcpClient.cpp \
@@ -20,6 +21,7 @@ SOURCES += \
 
 HEADERS += \
     Ball.h \
+    Button.h \
     Game.h \
     Players.h \
     TcpClient.h \

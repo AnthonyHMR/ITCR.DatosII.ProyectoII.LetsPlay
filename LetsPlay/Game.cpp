@@ -1,5 +1,4 @@
 #include "Game.h"
-#include "TcpClient.h"
 
 #include <QGraphicsScene>
 #include <QGraphicsRectItem>
@@ -8,6 +7,7 @@
 #include <QImage>
 #include <QBrush>
 #include <QJsonArray>
+#include <QGraphicsTextItem>
 
 Game::Game(QJsonObject mode)
 {
@@ -16,45 +16,55 @@ Game::Game(QJsonObject mode)
 
 void Game::show(int nPlayers)
 {
+    numPlayers = nPlayers;
+
     scene = new QGraphicsScene();
     scene->setSceneRect(0,0,630,420);
     scene->setBackgroundBrush(QBrush(QImage(":/images/field.jpg")));
 
     QStringList positions;
 
-    scene->addItem(ball);
+    QGraphicsRectItem *crossbar1 = new QGraphicsRectItem();
+    crossbar1->setRect(0,0,15,55);
+    crossbar1->setPos(26, 173);
+    scene->addItem(crossbar1);
 
-    QStringList posX;
+    QGraphicsRectItem *crossbar2 = new QGraphicsRectItem();
+    crossbar2->setRect(0,0,15,55);
+    crossbar2->setPos(584, 173);
+    scene->addItem(crossbar2);
+
     posX << "120" << "485" << "120" << "485" << "150" << "455" << "150" << "455" << "180" << "425" << "240" << "365" << "240" << "365";
+    posY << "140" << "140" << "240" << "240" << "50" << "50" << "330" << "330" << "190" << "190" << "130" << "130" << "250" << "250";
 
-    QStringList posY;
-    posY << "140" << "240" << "50" << "330" << "190" << "130" << "250";
+    ball = new Ball(posX, posY, nPlayers);
+    scene->addItem(ball);
 
     QJsonArray arrayObj;
     QJsonObject obj;
 
-    int count = 0;
     for (int i=0; i < nPlayers*2; i++) {
         if ((i+1)%2 != 0) {
-            buildPlayer(posX[i].toInt(), posY[count].toInt(), ":/images/germany.jpg");
+            buildPlayer(posX[i].toInt(), posY[i].toInt(), ":/images/germany.jpg");
             obj["ID"] = i+1;
             obj["PosX"] = abs(posX[i].toInt()/10);
-            obj["PosY"] = posY[count].toInt()/10;
+            obj["PosY"] = posY[i].toInt()/10;
             obj["Team"] = 1;
         }else{
-            buildPlayer(posX[i].toInt(), posY[count].toInt(), ":/images/brazil.jpg");
+            buildPlayer(posX[i].toInt(), posY[i].toInt(), ":/images/brazil.jpg");
             obj["ID"] = i+1;
             obj["PosX"] = abs(posX[i].toInt()/10);
-            obj["PosY"] = posY[count].toInt()/10;
+            obj["PosY"] = posY[i].toInt()/10;
             obj["Team"] = 2;
-            count++;
         }
         arrayObj.append(obj);
     }
     jsonObj["Players"] = arrayObj;
 
-    TcpClient *client = new TcpClient();
-    client->sendMessage(jsonConverter::convert(jsonObj));
+    ball->Connect();
+    ball->sendMessage(jsonConverter::convert(jsonObj));
+
+    createButton();
 
     //add a view
     QGraphicsView *view = new QGraphicsView(scene);
@@ -71,4 +81,49 @@ void Game::buildPlayer(int x, int y, QString image)
     build = new Players(x, y, image);
     scene->addItem(build);
     build = nullptr;
+}
+
+void Game::createButton()
+{
+//    QGraphicsTextItem *titleText = new QGraphicsTextItem(QString("Footbolin"));
+//    QFont titleFont("comic sans", 50);
+//    titleText->setFont(titleFont);
+//    int txPos = 100;
+//    int tyPos = 150;
+//    titleText->setPos(txPos, tyPos);
+//    scene->addItem(titleText);
+
+    playButton = new Button(QString("Play"));
+    int bxPos = 215;
+    int byPos = 300;
+    playButton->setPos(bxPos, byPos);
+    connect(playButton, SIGNAL(clicked()), this, SLOT(play()));
+    scene->addItem(playButton);
+}
+
+void Game::play()
+{
+    QGraphicsTextItem *titleText = new QGraphicsTextItem(QString("Footbolin"));
+    QFont titleFont("comic sans", 15);
+    titleText->setFont(titleFont);
+    titleText->setDefaultTextColor("white");
+    titleText->setPlainText("Cambio");
+
+    int txPos = 30;
+    int tyPos = 385;
+    titleText->setPos(txPos, tyPos);
+    scene->addItem(titleText);
+
+    QJsonObject obj;
+    QJsonObject shooter;
+    shooter["ID"] = 1;
+    shooter["Team"] = 1;
+    obj["shoot"] = shooter;
+
+    ball->sendMessage(jsonConverter::convert(obj));
+    scene->addItem(ball);
+    ball->setPos(posX[0].toInt()+21, posY[0].toInt()+4);
+    ball->setFlag(QGraphicsItem::ItemIsFocusable);
+    ball->setFocus();
+    scene->removeItem(playButton);
 }
