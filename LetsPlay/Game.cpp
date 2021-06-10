@@ -40,6 +40,36 @@ void Game::show(int nPlayers)
     ball = new Ball(posX, posY, nPlayers);
     scene->addItem(ball);
 
+    ball->lvl1 = new QGraphicsRectItem();
+    ball->lvl1->setRect(0,0,30,20);
+    ball->lvl1->setPos(590, 17);
+    ball->lvl1->setBrush(Qt::white);
+    scene->addItem(ball->lvl1);
+
+    ball->lvl2 = new QGraphicsRectItem();
+    ball->lvl2->setRect(0,0,30,20);
+    ball->lvl2->setPos(590, 37);
+    ball->lvl2->setBrush(Qt::white);
+    scene->addItem(ball->lvl2);
+
+    ball->lvl3 = new QGraphicsRectItem();
+    ball->lvl3->setRect(0,0,30,20);
+    ball->lvl3->setPos(590, 57);
+    ball->lvl3->setBrush(Qt::white);
+    scene->addItem(ball->lvl3);
+
+    ball->lvl4 = new QGraphicsRectItem();
+    ball->lvl4->setRect(0,0,30,20);
+    ball->lvl4->setPos(590, 77);
+    ball->lvl4->setBrush(Qt::white);
+    scene->addItem(ball->lvl4);
+
+    ball->lvl5 = new QGraphicsRectItem();
+    ball->lvl5->setRect(0,0,30,20);
+    ball->lvl5->setPos(590, 97);
+    ball->lvl5->setBrush(Qt::green);
+    scene->addItem(ball->lvl5);
+
     QJsonArray arrayObj;
     QJsonObject obj;
 

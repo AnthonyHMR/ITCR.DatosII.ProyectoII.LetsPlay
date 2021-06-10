@@ -27,6 +27,10 @@ void Ball::keyPressEvent(QKeyEvent *event)
         connect(timer, SIGNAL(timeout()), this, SLOT(move()));
 
         timer->start(50);
+    }else if(event->key() == Qt::Key_Up){
+
+    }else if(event->key() == Qt::Key_Down){
+
     }
 }
 
@@ -74,7 +78,7 @@ void Ball::move()
     }
 
     //move bullet up
-    setPos(x()+10, y());
+    setPos(x()+speed, y());
     if(pos().y() + rect().height() < 0 or pos().x() + rect().width() < 0) {
         scene()->removeItem(this);
         this->setPos(0, 0);;
