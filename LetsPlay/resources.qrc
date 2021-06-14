@@ -1,8 +1,8 @@
 <RCC>
     <qresource prefix="/images">
-        <file>field.jpg</file>
         <file>brazil.jpg</file>
         <file>germany.jpg</file>
         <file>ball.jpg</file>
+        <file>field.jpg</file>
     </qresource>
 </RCC>

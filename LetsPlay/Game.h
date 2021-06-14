@@ -9,8 +9,10 @@
 
 #include <QJsonObject>
 #include <QObject>
+#include <QMouseEvent>
+#include <QGraphicsView>
 
-class Game : public QObject, public QGraphicsPixmapItem, public jsonConverter
+class Game : public QGraphicsView, public QGraphicsPixmapItem, public jsonConverter
 {
     Q_OBJECT
 public:
@@ -30,6 +32,7 @@ private:
     int numPlayers;
     QStringList posX;
     QStringList posY;
+    void mousePressEvent(QMouseEvent *event);
 };
 
 #endif // GAME_H

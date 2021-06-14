@@ -819,6 +819,7 @@ moc_Ball.cpp: ../LetsPlay/Ball.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/QTimer \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qtimer.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qbasictimer.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtCore/QPointF \
 		moc_predefs.h \
 		../../../../Qt/5.15.1/gcc_64/bin/moc
 	/home/anthony/Qt/5.15.1/gcc_64/bin/moc $(DEFINES) --include /home/anthony/Documents/RepositoriosDatos2/ITCR.DatosII.ProyectoII.LetsPlay/build-LetsPlay-Desktop_Qt_5_15_1_GCC_64bit-Debug/moc_predefs.h -I/home/anthony/Qt/5.15.1/gcc_64/mkspecs/linux-g++ -I/home/anthony/Documents/RepositoriosDatos2/ITCR.DatosII.ProyectoII.LetsPlay/LetsPlay -I/home/anthony/Qt/5.15.1/gcc_64/include -I/home/anthony/Qt/5.15.1/gcc_64/include/QtWidgets -I/home/anthony/Qt/5.15.1/gcc_64/include/QtGui -I/home/anthony/Qt/5.15.1/gcc_64/include/QtNetwork -I/home/anthony/Qt/5.15.1/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../LetsPlay/Ball.h -o moc_Ball.cpp
@@ -1037,10 +1038,35 @@ moc_Game.cpp: ../LetsPlay/Game.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/QTimer \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qtimer.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qbasictimer.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtCore/QPointF \
 		../LetsPlay/Button.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsSceneMouseEvent \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qgraphicssceneevent.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsTextItem \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/QMouseEvent \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qevent.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qkeysequence.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtCore/qfile.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtCore/qfiledevice.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qvector2d.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsView \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qgraphicsview.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpainter.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qtextoption.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpen.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qbrush.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfontinfo.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfont.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfontmetrics.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qscrollarea.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qframe.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qwidget.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpalette.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qcursor.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qgraphicsscene.h \
 		moc_predefs.h \
 		../../../../Qt/5.15.1/gcc_64/bin/moc
 	/home/anthony/Qt/5.15.1/gcc_64/bin/moc $(DEFINES) --include /home/anthony/Documents/RepositoriosDatos2/ITCR.DatosII.ProyectoII.LetsPlay/build-LetsPlay-Desktop_Qt_5_15_1_GCC_64bit-Debug/moc_predefs.h -I/home/anthony/Qt/5.15.1/gcc_64/mkspecs/linux-g++ -I/home/anthony/Documents/RepositoriosDatos2/ITCR.DatosII.ProyectoII.LetsPlay/LetsPlay -I/home/anthony/Qt/5.15.1/gcc_64/include -I/home/anthony/Qt/5.15.1/gcc_64/include/QtWidgets -I/home/anthony/Qt/5.15.1/gcc_64/include/QtGui -I/home/anthony/Qt/5.15.1/gcc_64/include/QtNetwork -I/home/anthony/Qt/5.15.1/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../LetsPlay/Game.h -o moc_Game.cpp
@@ -1162,26 +1188,37 @@ moc_dialog.cpp: ../LetsPlay/dialog.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/QTimer \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qtimer.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qbasictimer.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtCore/QPointF \
 		../LetsPlay/Button.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsSceneMouseEvent \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qgraphicssceneevent.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsTextItem \
-		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QDialog \
-		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qdialog.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qwidget.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpalette.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qbrush.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfont.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfontmetrics.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfontinfo.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qsizepolicy.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qcursor.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qkeysequence.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/QMouseEvent \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/qevent.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qkeysequence.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qfile.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qfiledevice.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/qvector2d.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsView \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qgraphicsview.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpainter.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qtextoption.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpen.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qbrush.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfontinfo.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfont.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfontmetrics.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qscrollarea.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qframe.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qwidget.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpalette.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qcursor.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QDialog \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qdialog.h \
 		moc_predefs.h \
 		../../../../Qt/5.15.1/gcc_64/bin/moc
 	/home/anthony/Qt/5.15.1/gcc_64/bin/moc $(DEFINES) --include /home/anthony/Documents/RepositoriosDatos2/ITCR.DatosII.ProyectoII.LetsPlay/build-LetsPlay-Desktop_Qt_5_15_1_GCC_64bit-Debug/moc_predefs.h -I/home/anthony/Qt/5.15.1/gcc_64/mkspecs/linux-g++ -I/home/anthony/Documents/RepositoriosDatos2/ITCR.DatosII.ProyectoII.LetsPlay/LetsPlay -I/home/anthony/Qt/5.15.1/gcc_64/include -I/home/anthony/Qt/5.15.1/gcc_64/include/QtWidgets -I/home/anthony/Qt/5.15.1/gcc_64/include/QtGui -I/home/anthony/Qt/5.15.1/gcc_64/include/QtNetwork -I/home/anthony/Qt/5.15.1/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../LetsPlay/dialog.h -o moc_dialog.cpp
@@ -1303,25 +1340,36 @@ moc_widget.cpp: ../LetsPlay/widget.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/QTimer \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qtimer.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qbasictimer.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtCore/QPointF \
 		../LetsPlay/Button.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsSceneMouseEvent \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qgraphicssceneevent.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsTextItem \
-		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QWidget \
-		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qwidget.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpalette.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qbrush.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfont.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfontmetrics.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfontinfo.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qsizepolicy.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qcursor.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qkeysequence.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/QMouseEvent \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/qevent.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qkeysequence.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qfile.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qfiledevice.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/qvector2d.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsView \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qgraphicsview.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpainter.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qtextoption.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpen.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qbrush.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfontinfo.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfont.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfontmetrics.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qscrollarea.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qframe.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qwidget.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpalette.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qcursor.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QWidget \
 		moc_predefs.h \
 		../../../../Qt/5.15.1/gcc_64/bin/moc
 	/home/anthony/Qt/5.15.1/gcc_64/bin/moc $(DEFINES) --include /home/anthony/Documents/RepositoriosDatos2/ITCR.DatosII.ProyectoII.LetsPlay/build-LetsPlay-Desktop_Qt_5_15_1_GCC_64bit-Debug/moc_predefs.h -I/home/anthony/Qt/5.15.1/gcc_64/mkspecs/linux-g++ -I/home/anthony/Documents/RepositoriosDatos2/ITCR.DatosII.ProyectoII.LetsPlay/LetsPlay -I/home/anthony/Qt/5.15.1/gcc_64/include -I/home/anthony/Qt/5.15.1/gcc_64/include/QtWidgets -I/home/anthony/Qt/5.15.1/gcc_64/include/QtGui -I/home/anthony/Qt/5.15.1/gcc_64/include/QtNetwork -I/home/anthony/Qt/5.15.1/gcc_64/include/QtCore -I. -I/usr/include/c++/9 -I/usr/include/x86_64-linux-gnu/c++/9 -I/usr/include/c++/9/backward -I/usr/lib/gcc/x86_64-linux-gnu/9/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../LetsPlay/widget.h -o moc_widget.cpp
@@ -1464,6 +1512,7 @@ Ball.o: ../LetsPlay/Ball.cpp ../LetsPlay/Ball.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/QTimer \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qtimer.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qbasictimer.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtCore/QPointF \
 		../LetsPlay/Players.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsPixmapItem \
 		../LetsPlay/Game.h \
@@ -1471,18 +1520,33 @@ Ball.o: ../LetsPlay/Ball.cpp ../LetsPlay/Ball.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsSceneMouseEvent \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qgraphicssceneevent.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsTextItem \
-		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsScene \
-		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qgraphicsscene.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qbrush.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfont.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpen.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/QKeyEvent \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/QMouseEvent \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/qevent.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/qkeysequence.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qfile.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qfiledevice.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/qvector2d.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qtouchdevice.h
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsView \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qgraphicsview.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpainter.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qtextoption.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpen.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qbrush.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfontinfo.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfont.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfontmetrics.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qscrollarea.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qframe.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qwidget.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpalette.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qcursor.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsScene \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/QKeyEvent \
+		../../../../Qt/5.15.1/gcc_64/include/QtCore/qmath.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Ball.o ../LetsPlay/Ball.cpp
 
 Button.o: ../LetsPlay/Button.cpp ../LetsPlay/Button.h \
@@ -1699,20 +1763,26 @@ Game.o: ../LetsPlay/Game.cpp ../LetsPlay/Game.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/QTimer \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qtimer.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qbasictimer.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtCore/QPointF \
 		../LetsPlay/Button.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsSceneMouseEvent \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qgraphicssceneevent.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsTextItem \
-		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsScene \
-		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qgraphicsscene.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qbrush.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfont.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpen.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/QMouseEvent \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qevent.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qkeysequence.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtCore/qfile.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtCore/qfiledevice.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qvector2d.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qtouchdevice.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsView \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qgraphicsview.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpainter.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/qtextoption.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpen.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qbrush.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfontinfo.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfont.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfontmetrics.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qscrollarea.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qabstractscrollarea.h \
@@ -1721,16 +1791,13 @@ Game.o: ../LetsPlay/Game.cpp ../LetsPlay/Game.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpalette.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qsizepolicy.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/qcursor.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qkeysequence.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qevent.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtCore/qfile.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtCore/qfiledevice.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qvector2d.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsScene \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/QImage \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/QBrush \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/QJsonArray \
-		../../../../Qt/5.15.1/gcc_64/include/QtCore/qjsonarray.h
+		../../../../Qt/5.15.1/gcc_64/include/QtCore/qjsonarray.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Game.o ../LetsPlay/Game.cpp
 
 Players.o: ../LetsPlay/Players.cpp ../LetsPlay/Players.h \
@@ -2034,26 +2101,37 @@ dialog.o: ../LetsPlay/dialog.cpp ../LetsPlay/dialog.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/QTimer \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qtimer.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qbasictimer.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtCore/QPointF \
 		../LetsPlay/Button.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsSceneMouseEvent \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qgraphicssceneevent.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsTextItem \
-		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QDialog \
-		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qdialog.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qwidget.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpalette.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qbrush.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfont.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfontmetrics.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfontinfo.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qsizepolicy.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qcursor.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qkeysequence.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/QMouseEvent \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/qevent.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qkeysequence.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qfile.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qfiledevice.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/qvector2d.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsView \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qgraphicsview.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpainter.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qtextoption.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpen.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qbrush.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfontinfo.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfont.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfontmetrics.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qscrollarea.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qframe.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qwidget.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpalette.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qcursor.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QDialog \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qdialog.h \
 		ui_dialog.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/QVariant \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QApplication \
@@ -2071,7 +2149,6 @@ dialog.o: ../LetsPlay/dialog.cpp ../LetsPlay/dialog.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QHBoxLayout \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QLabel \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qlabel.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qframe.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QPushButton \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qpushbutton.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qabstractbutton.h \
@@ -2281,25 +2358,36 @@ main.o: ../LetsPlay/main.cpp ../LetsPlay/widget.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/QTimer \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qtimer.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qbasictimer.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtCore/QPointF \
 		../LetsPlay/Button.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsSceneMouseEvent \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qgraphicssceneevent.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsTextItem \
-		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QWidget \
-		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qwidget.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpalette.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qbrush.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfont.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfontmetrics.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfontinfo.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qsizepolicy.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qcursor.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qkeysequence.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/QMouseEvent \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/qevent.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qkeysequence.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qfile.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qfiledevice.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/qvector2d.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsView \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qgraphicsview.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpainter.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qtextoption.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpen.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qbrush.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfontinfo.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfont.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfontmetrics.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qscrollarea.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qframe.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qwidget.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpalette.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qcursor.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QWidget \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QApplication \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qapplication.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qcoreapplication.h \
@@ -2426,25 +2514,36 @@ widget.o: ../LetsPlay/widget.cpp ../LetsPlay/widget.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/QTimer \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qtimer.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qbasictimer.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtCore/QPointF \
 		../LetsPlay/Button.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsSceneMouseEvent \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qgraphicssceneevent.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsTextItem \
-		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QWidget \
-		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qwidget.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpalette.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qbrush.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfont.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfontmetrics.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfontinfo.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qsizepolicy.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qcursor.h \
-		../../../../Qt/5.15.1/gcc_64/include/QtGui/qkeysequence.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/QMouseEvent \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/qevent.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qkeysequence.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qfile.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/qfiledevice.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/qvector2d.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/qtouchdevice.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsView \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qgraphicsview.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpainter.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qtextoption.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpen.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qbrush.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfontinfo.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfont.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qfontmetrics.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qscrollarea.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qabstractscrollarea.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qframe.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qwidget.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qpalette.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qsizepolicy.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtGui/qcursor.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/qgraphicsscene.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QWidget \
 		ui_widget.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtCore/QVariant \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QApplication \
