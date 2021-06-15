@@ -1412,7 +1412,8 @@ Ball.o: ../LetsPlay/Ball.cpp ../LetsPlay/Ball.h \
 		../LetsPlay/crossBar.h \
 		../../../../Qt/5.15.1/gcc_64/include/QtWidgets/QGraphicsScene \
 		../../../../Qt/5.15.1/gcc_64/include/QtGui/QKeyEvent \
-		../../../../Qt/5.15.1/gcc_64/include/QtCore/qmath.h
+		../../../../Qt/5.15.1/gcc_64/include/QtCore/qmath.h \
+		../../../../Qt/5.15.1/gcc_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o Ball.o ../LetsPlay/Ball.cpp
 
 Button.o: ../LetsPlay/Button.cpp ../LetsPlay/Button.h \

@@ -11,7 +11,6 @@ Score::Score(int maxGoals, QGraphicsItem *parent) : QGraphicsTextItem(parent)
 
     //draw the text
     setPlainText(QString::number(scoreTeam1) + QString(" - ") + QString::number(scoreTeam2)); //Score: 0
-    setDefaultTextColor(Qt::blue);
     setFont(QFont("times", 18));
     setDefaultTextColor("white");
     setPos(275, 374);

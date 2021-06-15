@@ -9,6 +9,7 @@
 #include <QJsonObject>
 #include <qmath.h>
 #include <QMouseEvent>
+#include <QDebug>
 
 Ball::Ball(QStringList X, QStringList Y, int nP)
 {
@@ -113,6 +114,8 @@ void Ball::play()
     setFlag(QGraphicsItem::ItemIsFocusable);
     setFocus();
     scene()->removeItem(playButton);
+
+    qDebug() << TcpClient::getMessage();
 }
 
 void Ball::conditions(bool gol)
@@ -163,6 +166,8 @@ void Ball::conditions(bool gol)
     lvl2->setBrush(Qt::white);
     lvl3->setBrush(Qt::white);
     lvl4->setBrush(Qt::white);
+
+    qDebug() << TcpClient::getMessage();
 
     delete(timer);
 }
