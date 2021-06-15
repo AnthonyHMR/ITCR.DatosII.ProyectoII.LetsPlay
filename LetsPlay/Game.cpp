@@ -1,4 +1,5 @@
 #include "Game.h"
+#include "crossBar.h"
 
 #include <QGraphicsScene>
 #include <QGraphicsRectItem>
@@ -10,29 +11,23 @@
 #include <QGraphicsTextItem>
 #include <QDebug>
 
-Game::Game(QJsonObject mode)
+Game::Game(QJsonObject mode, int nPlayers, int maxGoals)
 {
     jsonObj = mode;
-}
 
-void Game::show(int nPlayers)
-{
     numPlayers = nPlayers;
 
-    scene = new QGraphicsScene();
+    scene = new QGraphicsScene(this);
     scene->setSceneRect(0,0,610,410);
     scene->setBackgroundBrush(QBrush(QImage(":/images/field.jpg")));
+    setScene(scene);
 
     QStringList positions;
 
-    QGraphicsRectItem *crossbar1 = new QGraphicsRectItem();
-    crossbar1->setRect(0,0,10,55);
-    crossbar1->setPos(20, 173);
+    crossBar *crossbar1 = new crossBar(10, 173);
     scene->addItem(crossbar1);
 
-    QGraphicsRectItem *crossbar2 = new QGraphicsRectItem();
-    crossbar2->setRect(0,0,10,55);
-    crossbar2->setPos(570, 173);
+    crossBar *crossbar2 = new crossBar(570, 173);
     scene->addItem(crossbar2);
 
     posX << "100" << "485" << "100" << "485" << "130" << "455" << "130" << "455" << "160" << "425" << "220" << "365" << "220" << "365";
@@ -95,16 +90,14 @@ void Game::show(int nPlayers)
     ball->Connect();
     ball->sendMessage(jsonConverter::convert(jsonObj));
 
-    createButton();
+    ball->createButton();
 
-    //add a view
-    QGraphicsView *view = new QGraphicsView(scene);
-    view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
-    view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    ball->score = new Score(maxGoals);
+    scene->addItem(ball->score);
 
-    //show the view
-    view->show();
-    view->setFixedSize(610,410);
+    setFixedSize(610,410);
+    setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+    setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
 }
 
 void Game::buildPlayer(int x, int y, QString image)
@@ -114,52 +107,7 @@ void Game::buildPlayer(int x, int y, QString image)
     build = nullptr;
 }
 
-void Game::createButton()
-{
-//    QGraphicsTextItem *titleText = new QGraphicsTextItem(QString("Footbolin"));
-//    QFont titleFont("comic sans", 50);
-//    titleText->setFont(titleFont);
-//    int txPos = 100;
-//    int tyPos = 150;
-//    titleText->setPos(txPos, tyPos);
-//    scene->addItem(titleText);
-
-    playButton = new Button(QString("Play"));
-    int bxPos = 215;
-    int byPos = 300;
-    playButton->setPos(bxPos, byPos);
-    connect(playButton, SIGNAL(clicked()), this, SLOT(play()));
-    scene->addItem(playButton);
-}
-
-void Game::play()
-{
-    QGraphicsTextItem *titleText = new QGraphicsTextItem(QString("Footbolin"));
-    QFont titleFont("comic sans", 15);
-    titleText->setFont(titleFont);
-    titleText->setDefaultTextColor("white");
-    titleText->setPlainText("Cambio");
-
-    int txPos = 30;
-    int tyPos = 385;
-    titleText->setPos(txPos, tyPos);
-    scene->addItem(titleText);
-
-    QJsonObject obj;
-    QJsonObject shooter;
-    shooter["ID"] = 1;
-    shooter["Team"] = 1;
-    obj["Shoot"] = shooter;
-
-    ball->sendMessage(jsonConverter::convert(obj));
-    scene->addItem(ball);
-    ball->setPos(posX[0].toInt()+21, posY[0].toInt()+4);
-    ball->setFlag(QGraphicsItem::ItemIsFocusable);
-    ball->setFocus();
-    scene->removeItem(playButton);
-}
-
 void Game::mousePressEvent(QMouseEvent *event)
 {
-    qDebug() << "pressed";
+    ball->setShootDest(event->pos());
 }

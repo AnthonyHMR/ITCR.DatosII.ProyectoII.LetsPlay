@@ -3,6 +3,8 @@
 
 #include "TcpClient.h"
 #include "jsonConverter.h"
+#include "Button.h"
+#include "Score.h"
 
 #include <QGraphicsRectItem>
 #include <QObject>
@@ -20,11 +22,15 @@ public:
     QGraphicsRectItem *lvl3;
     QGraphicsRectItem *lvl4;
     QGraphicsRectItem *lvl5;
+    void createButton();
+    void setShootDest(QPointF);
+    Score *score;
 private:
-    void conditions();
+    void conditions(bool);
     void keyPressEvent(QKeyEvent *event);
 public slots:
     void move();
+    void play();
 private:
     QTimer *timer;
     QStringList posX;
@@ -36,6 +42,7 @@ private:
     int id = 2;
     jsonConverter *json;
     QPointF shoot_dest;
+    Button *playButton;
 };
 
 #endif // BALL_H

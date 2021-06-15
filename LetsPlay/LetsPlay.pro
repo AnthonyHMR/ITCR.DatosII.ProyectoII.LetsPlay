@@ -13,7 +13,9 @@ SOURCES += \
     Button.cpp \
     Game.cpp \
     Players.cpp \
+    Score.cpp \
     TcpClient.cpp \
+    crossBar.cpp \
     dialog.cpp \
     jsonConverter.cpp \
     main.cpp \
@@ -24,7 +26,9 @@ HEADERS += \
     Button.h \
     Game.h \
     Players.h \
+    Score.h \
     TcpClient.h \
+    crossBar.h \
     dialog.h \
     jsonConverter.h \
     widget.h

@@ -1,6 +1,8 @@
 #include "Button.h"
 #include <QBrush>
 
+#include <QDebug>
+
 
 Button::Button(QString name, QGraphicsItem *parent) : QGraphicsRectItem(parent)
 {

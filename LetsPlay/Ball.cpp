@@ -1,14 +1,14 @@
 #include "Ball.h"
 #include "Players.h"
 #include "Game.h"
+#include "crossBar.h"
 
 #include <QGraphicsScene>
 #include <QKeyEvent>
 #include <QJsonDocument>
 #include <QJsonObject>
 #include <qmath.h>
-
-extern Game *game;
+#include <QMouseEvent>
 
 Ball::Ball(QStringList X, QStringList Y, int nP)
 {
@@ -23,7 +23,6 @@ Ball::Ball(QStringList X, QStringList Y, int nP)
 
 void Ball::keyPressEvent(QKeyEvent *event)
 {
-    shoot_dest = QPointF(300, 0);
     if(event->key() == Qt::Key_Space){
         QLineF ln(QPointF(x(), y()), shoot_dest);
         int angle = -1 * ln.angle();
@@ -62,8 +61,10 @@ void Ball::move()
     QList<QGraphicsItem *> colliding_items = collidingItems();
     for (int i = 0, n = colliding_items.size(); i < n; ++i) {
         if(typeid(*(colliding_items[i])) == typeid(Players) and collide == true) {
-            conditions();
+            conditions(false);
             return;
+        }else if(typeid(*(colliding_items[i])) == typeid(crossBar) and collide == true){
+            conditions(true);
         }
     }
 
@@ -78,7 +79,7 @@ void Ball::move()
     setPos(x()+dx, y()+dy);
 
     if(pos().y() + rect().height() < 0 or pos().x() + rect().width() < 0 or pos().y() + rect().height() > 420 or pos().x() + rect().width() > 630) {
-        conditions();
+        conditions(false);
     }
 
     if (collide == true) {
@@ -89,7 +90,32 @@ void Ball::move()
 
 }
 
-void Ball::conditions()
+void Ball::createButton()
+{
+    playButton = new Button(QString("Play"));
+    int bxPos = 215;
+    int byPos = 300;
+    playButton->setPos(bxPos, byPos);
+    connect(playButton, SIGNAL(clicked()), this, SLOT(play()));
+    scene()->addItem(playButton);
+}
+
+void Ball::play()
+{
+    QJsonObject obj;
+    QJsonObject shooter;
+    shooter["ID"] = 1;
+    shooter["Team"] = 1;
+    obj["Shoot"] = shooter;
+
+    sendMessage(json->convert(obj));
+    setPos(posX[0].toInt()+21, posY[0].toInt()+4);
+    setFlag(QGraphicsItem::ItemIsFocusable);
+    setFocus();
+    scene()->removeItem(playButton);
+}
+
+void Ball::conditions(bool gol)
 {
     int ind;
     int team;
@@ -102,6 +128,18 @@ void Ball::conditions()
         team = 2;
     }
     this->setPos(posX[count].toInt()+ind, posY[count].toInt()+4);
+
+    if(gol){
+        if(team == 1) {
+            if(score->increaseTeam1()){
+                scene()->removeItem(this);
+            }
+        }else{
+            if(score->increaseTeam2()){
+                scene()->removeItem(this);
+            }
+        }
+    }
 
     QJsonObject obj;
     QJsonObject shooter;
@@ -127,4 +165,9 @@ void Ball::conditions()
     lvl4->setBrush(Qt::white);
 
     delete(timer);
+}
+
+void Ball::setShootDest(QPointF destination)
+{
+    shoot_dest = destination;
 }
