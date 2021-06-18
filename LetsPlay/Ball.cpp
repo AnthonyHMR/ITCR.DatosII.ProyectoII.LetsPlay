@@ -62,15 +62,21 @@ void Ball::move()
     QList<QGraphicsItem *> colliding_items = collidingItems();
     for (int i = 0, n = colliding_items.size(); i < n; ++i) {
         if(typeid(*(colliding_items[i])) == typeid(Players) and collide == true) {
-            conditions(false);
+            if(!multiplayer and maquina == true){
+                conditionsSingleplayer(false);
+            }else{
+                conditionsMultiplayer(false);
+            }
             return;
         }else if(typeid(*(colliding_items[i])) == typeid(crossBar) and collide == true){
-            conditions(true);
+            if(!multiplayer and maquina == true){
+                conditionsSingleplayer(true);
+            }else{
+                conditionsMultiplayer(true);
+            }
         }
     }
 
-    //move bullet up
-    //setPos(x()+speed, y());
     int STEP_SIZE = speed;
     double theta = rotation();
 
@@ -80,7 +86,11 @@ void Ball::move()
     setPos(x()+dx, y()+dy);
 
     if(pos().y() + rect().height() < 0 or pos().x() + rect().width() < 0 or pos().y() + rect().height() > 420 or pos().x() + rect().width() > 630) {
-        conditions(false);
+        if(!multiplayer and maquina == true){
+            conditionsSingleplayer(false);
+        }else{
+            conditionsMultiplayer(false);
+        }
     }
 
     if (collide == true) {
@@ -91,10 +101,12 @@ void Ball::move()
 
 }
 
-void Ball::createButton()
+void Ball::createButton(bool mplayer)
 {
-    playButton = new Button(QString("Play"));
-    int bxPos = 215;
+    multiplayer = mplayer;
+
+    playButton = new Button(QString("Play"), 200, 50);
+    int bxPos = 200;
     int byPos = 300;
     playButton->setPos(bxPos, byPos);
     connect(playButton, SIGNAL(clicked()), this, SLOT(play()));
@@ -114,11 +126,78 @@ void Ball::play()
     setFlag(QGraphicsItem::ItemIsFocusable);
     setFocus();
     scene()->removeItem(playButton);
-
-    qDebug() << TcpClient::getMessage();
 }
 
-void Ball::conditions(bool gol)
+void Ball::conditionsSingleplayer(bool gol)
+{
+    qDebug() << "passed";
+    int ind;
+    int team;
+
+    if ((count+1)%2 != 0) {
+        ind = +21;
+        team = 1;
+    }else{
+        ind = -13;
+        team = 2;
+    }
+    this->setPos(posX[count].toInt()+ind, posY[count].toInt()+4);
+
+    if(gol){
+        if(team == 1) {
+            if(score->increaseTeam1()){
+                scene()->removeItem(this);
+            }
+        }else{
+            if(score->increaseTeam2()){
+                scene()->removeItem(this);
+            }
+        }
+    }
+
+    QJsonObject obj;
+    QJsonObject shooter;
+    shooter["ID"] = id;
+    shooter["Team"] = team;
+    obj["Shoot"] = shooter;
+
+    TcpClient::sendMessage(json->convert(obj));
+
+    if (count==nPlayers*2-1){
+        count = 0;
+        id = 1;
+    }else {
+        count++;
+        id++;
+    }
+
+    changeColor = 1;
+    speed = 10;
+    lvl1->setBrush(Qt::white);
+    lvl2->setBrush(Qt::white);
+    lvl3->setBrush(Qt::white);
+    lvl4->setBrush(Qt::white);
+
+    delete(timer);
+
+    QLineF ln(QPointF(x(), y()), QPointF(10, 200));
+    int angle = -1 * ln.angle();
+
+    this->setRotation(angle);
+
+    timer = new QTimer();
+    connect(timer, SIGNAL(timeout()), this, SLOT(move()));
+
+    timer->start(50);
+
+    if (maquina == true){
+        maquina = false;
+    }else{
+        maquina = true;
+    }
+}
+
+void Ball::conditionsMultiplayer(bool gol)
 {
     int ind;
     int team;
@@ -167,9 +246,13 @@ void Ball::conditions(bool gol)
     lvl3->setBrush(Qt::white);
     lvl4->setBrush(Qt::white);
 
-    qDebug() << TcpClient::getMessage();
-
     delete(timer);
+
+    if (maquina == true){
+        maquina = false;
+    }else{
+        maquina = true;
+    }
 }
 
 void Ball::setShootDest(QPointF destination)

@@ -20,9 +20,9 @@ void Dialog::on_pushButton_clicked()
 {
     QJsonObject obj;
 
-    obj["GameMode"] = ui->gameMode->value();
+    obj["GameMode"] = 1;
 
-    game = new Game(obj, ui->nPlayers->value(), ui->maxGoals->value());
+    game = new Game(obj, ui->nPlayers->value(), ui->maxGoals->value(), ui->gameMode->value());
     game->show();
 
     this->close();

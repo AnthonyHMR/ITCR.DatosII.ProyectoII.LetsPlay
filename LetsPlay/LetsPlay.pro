@@ -12,7 +12,9 @@ SOURCES += \
     Ball.cpp \
     Button.cpp \
     Game.cpp \
+    Path.cpp \
     Players.cpp \
+    Request.cpp \
     Score.cpp \
     TcpClient.cpp \
     crossBar.cpp \
@@ -25,7 +27,9 @@ HEADERS += \
     Ball.h \
     Button.h \
     Game.h \
+    Path.h \
     Players.h \
+    Request.h \
     Score.h \
     TcpClient.h \
     crossBar.h \

@@ -1,5 +1,8 @@
 #include "jsonConverter.h"
 
+#include <QFile>
+#include <QJsonArray>
+
 QByteArray jsonConverter::convert(QJsonObject obj)
 {
     QByteArray data_json;
@@ -9,6 +12,12 @@ QByteArray jsonConverter::convert(QJsonObject obj)
     data_json = doc.toJson();
 
     return data_json;
+}
+
+QJsonArray jsonConverter::readResultsJson(QJsonObject jsonName) {
+    QJsonArray path = jsonName["Path"].toArray();
+    //request->setPath(path);
+    return path;
 }
 
 QJsonObject jsonConverter::getJsonObjectFromString(const QString jsonString) {

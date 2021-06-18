@@ -15,7 +15,7 @@
 class Game : public QGraphicsView, public jsonConverter
 {
 public:
-    Game(QJsonObject, int, int);
+    Game(QJsonObject, int, int, int);
     void buildPlayer(int, int, QString);
     void mousePressEvent(QMouseEvent *event);
 private:

@@ -1,5 +1,6 @@
 #include "Game.h"
 #include "crossBar.h"
+#include "Path.h"
 
 #include <QGraphicsScene>
 #include <QGraphicsRectItem>
@@ -11,7 +12,7 @@
 #include <QGraphicsTextItem>
 #include <QDebug>
 
-Game::Game(QJsonObject mode, int nPlayers, int maxGoals)
+Game::Game(QJsonObject mode, int nPlayers, int maxGoals, int gameMode)
 {
     jsonObj = mode;
 
@@ -73,14 +74,14 @@ Game::Game(QJsonObject mode, int nPlayers, int maxGoals)
         if ((i+1)%2 != 0) {
             buildPlayer(posX[i].toInt(), posY[i].toInt(), ":/images/germany.jpg");
             obj["ID"] = i+1;
-            obj["PosX"] = abs(posX[i].toInt()/20);
-            obj["PosY"] = posY[i].toInt()/20;
+            obj["PosX"] = posY[i].toInt()/20;
+            obj["PosY"] = abs(posX[i].toInt()/20);
             obj["Team"] = 1;
         }else{
             buildPlayer(posX[i].toInt(), posY[i].toInt(), ":/images/brazil.jpg");
             obj["ID"] = i+1;
-            obj["PosX"] = abs(posX[i].toInt()/20);
-            obj["PosY"] = posY[i].toInt()/20;
+            obj["PosX"] = posY[i].toInt()/20;
+            obj["PosY"] = abs(posX[i].toInt()/20);
             obj["Team"] = 2;
         }
         arrayObj.append(obj);
@@ -90,7 +91,11 @@ Game::Game(QJsonObject mode, int nPlayers, int maxGoals)
     ball->Connect();
     ball->sendMessage(jsonConverter::convert(jsonObj));
 
-    ball->createButton();
+    if(gameMode == 1) {
+        ball->createButton(false);
+    }else{
+        ball->createButton(true);
+    }
 
     ball->score = new Score(maxGoals);
     scene->addItem(ball->score);
@@ -109,5 +114,14 @@ void Game::buildPlayer(int x, int y, QString image)
 
 void Game::mousePressEvent(QMouseEvent *event)
 {
+    QJsonObject objReceived;
+
     ball->setShootDest(event->pos());
+
+    objReceived =  ball->json->getJsonObjectFromString(ball->getMessage());
+
+    Path *path = new Path(ball->json->readResultsJson(objReceived));
+    scene->addItem(path);
+
+    qDebug() << ball->json->readResultsJson(objReceived);
 }

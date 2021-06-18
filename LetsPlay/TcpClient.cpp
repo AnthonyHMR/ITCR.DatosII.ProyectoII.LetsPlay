@@ -11,6 +11,7 @@ void TcpClient::Connect()
     connect(mSocket, &QTcpSocket::readyRead, [&]() {
         QTextStream T(mSocket);
         text = T.readLine();
+
     });
 
     mSocket->connectToHost("localhost", 54000);

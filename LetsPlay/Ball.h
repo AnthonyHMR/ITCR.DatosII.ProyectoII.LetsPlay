@@ -22,11 +22,13 @@ public:
     QGraphicsRectItem *lvl3;
     QGraphicsRectItem *lvl4;
     QGraphicsRectItem *lvl5;
-    void createButton();
+    void createButton(bool);
     void setShootDest(QPointF);
     Score *score;
+    jsonConverter *json;
 private:
-    void conditions(bool);
+    void conditionsMultiplayer(bool);
+    void conditionsSingleplayer(bool);
     void keyPressEvent(QKeyEvent *event);
 public slots:
     void move();
@@ -40,9 +42,12 @@ private:
     int changeColor = 1;
     int speed = 5;
     int id = 2;
-    jsonConverter *json;
     QPointF shoot_dest;
     Button *playButton;
+
+    Button *pathButton;
+    bool multiplayer;
+    bool maquina = true;
 };
 
 #endif // BALL_H
